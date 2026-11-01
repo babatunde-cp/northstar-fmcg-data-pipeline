@@ -1,0 +1,7 @@
+database:
+  server: DESKTOP-48A0DFG\SQLEXPRESS  
+  name: FMCG_Pipeline
+  driver: ODBC Driver 18 for SQL Server
+
+paths:
+  data_dir: data
