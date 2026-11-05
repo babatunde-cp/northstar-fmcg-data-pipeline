@@ -5,3 +5,9 @@ database:
 
 paths:
   data_dir: data
+reference:
+  valid_warehouses:
+    - WH-ABJ
+    - WH-LAG
+    - WH-OGN
+    - WH-PHC
