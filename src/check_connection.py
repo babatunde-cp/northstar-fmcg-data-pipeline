@@ -22,7 +22,9 @@ def build_engine(cfg: dict):
         f"DRIVER={{{db['driver']}}};SERVER={db['server']};DATABASE={db['name']};"
         "Trusted_Connection=yes;TrustServerCertificate=yes;"
     )
-    return create_engine(f"mssql+pyodbc:///?odbc_connect={quote_plus(odbc)}")
+    return create_engine(
+        f"mssql+pyodbc:///?odbc_connect={quote_plus(odbc)}", fast_executemany=True
+    )
 
 
 if __name__ == "__main__":
