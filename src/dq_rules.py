@@ -6,7 +6,7 @@ Every rule has one of three outcomes:
   QUARANTINE  hold the row back, with the reason(s) recorded
 
 These functions use pandas only (no database), so they are easy to test.
-Each process_* function returns a DQResult: clean rows, quarantined rows
+Each process function returns a DQResult: clean rows, quarantined rows
 (with their ORIGINAL raw values) and a table of how many rows each rule hit.
 """
 from dataclasses import dataclass
