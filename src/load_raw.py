@@ -41,11 +41,7 @@ def setup_logging() -> None:
     )
 
 
-def read_sheet(data_dir: Path, workbook: str, sheet: str) -> pd.DataFrame:
-    path = data_dir / workbook
-    if not path.exists():
-        raise FileNotFoundError(f"Input workbook not found: {path}")
-    return pd.read_excel(path, sheet_name=sheet)
+from input_checks import read_sheet
 
 
 def start_run(conn) -> int:
