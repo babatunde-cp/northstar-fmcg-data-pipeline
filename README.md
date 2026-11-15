@@ -109,10 +109,11 @@ pip install -r requirements.txt
 #   sql/03_create_staging_and_quarantine_tables.sql
 #   sql/04_create_curated_model.sql
 
-# run the pipeline
-python src/load_raw.py
-python src/run_dq.py
-python src/build_curated.py
+# run the whole pipeline (load, data quality, curated model, views, validation)
+python src/run_pipeline.py
+
+# run the tests
+pytest
 
 # create the reporting views (sql/06_create_analytics_views.sql), then check everything
 python src/validate_views.py
@@ -156,11 +157,12 @@ tests/           automated tests
 ## Status and next steps
 
 - [x] Profiling, raw load, data-quality rules, star schema, analytics views, validation
-- [ ] Automated tests for missing or malformed input files
-- [ ] One-command pipeline run
+- [x] Automated tests for missing or malformed input files
+- [x] One-command pipeline run
 - [ ] Optional extensions: orchestration (Airflow) and a PySpark comparison
 
 ## Notes
 
-The dataset and business brief are synthetic. Add a licence and your name or contact details here before
-making the repository public.
+The dataset and business brief are synthetic. 
+
+## Blavklyst
