@@ -1,5 +1,8 @@
 """Run the whole pipeline with one command.
 
+    python src/run_pipeline.py                  run every step
+    python src/run_pipeline.py --skip-checks    run everything except the final validation
+    python src/run_pipeline.py --from build     start at a later step (load, dq, build, views, check)
 
 The database objects must already exist (run sql/01 to sql/04 once). 
 Each step is also a script you can run on its own. 
