@@ -130,6 +130,15 @@ Every step can be re-run safely. Each one empties and reloads its own tables, in
   compares them with the views (18 checks).
 - `sql/checks/` holds reconciliation queries for the raw, data-quality, curated and view layers.
 
+## Orchestration with Airflow (optional, local)
+
+`orchestration/dags/northstar_fmcg_pipeline.py` is an Airflow DAG with five tasks that run in order:
+load raw, data quality, build curated model, create views, validate views.
+
+Airflow runs in WSL2 and starts the project's Windows Python, which keeps the SQL Server Windows
+sign-in simple. This is a local development setup. A production setup would use containers and
+securely stored credentials.
+
 ## Repository structure
 
 ```
@@ -159,7 +168,7 @@ tests/           automated tests
 - [x] Profiling, raw load, data-quality rules, star schema, analytics views, validation
 - [x] Automated tests for missing or malformed input files
 - [x] One-command pipeline run
-- [ ] Optional extensions: orchestration (Airflow) and a PySpark comparison
+- [x] Optional extensions: orchestration (Airflow) and a PySpark comparison
 
 ## Notes
 
